@@ -1,0 +1,10 @@
+{
+  "presets": [
+    "@babel/preset-typescript",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "react-require",
+    "@babel/plugin-transform-modules-commonjs"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "extends": [
+    "standard-with-typescript",
+    "standard-jsx"
+  ],
+  "ignorePatterns": [
+    "/dist",
+    "**/__snapshots__"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
+}

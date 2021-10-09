@@ -1,0 +1,73 @@
+{
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "lint": "eslint .",
+    "build:cjs": "babel --config-file ./babelConfigCjs.json lib --out-dir dist/cjs --extensions \".tsx,.ts\" --ignore **/*.stories.tsx,**/__tests__",
+    "build:esm": "babel --config-file ./babelConfigEsm.json lib --out-dir dist/esm --extensions \".tsx,.ts\" --ignore **/*.stories.tsx,**/__tests__",
+    "build": "npm run build:cjs && npm run build:esm",
+    "test": "jest",
+    "build:docs": "build-storybook -o docs",
+    "storybook": "start-storybook"
+  },
+  "name": "rc-antd-error-result",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ChocolateLoverRaj/rc-antd-error-result#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChocolateLoverRaj/rc-antd-error-result.git"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/plugin-transform-modules-commonjs": "^7.15.4",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
+    "@storybook/addon-console": "^1.2.3",
+    "@storybook/addon-essentials": "^6.3.10",
+    "@storybook/react": "^6.3.10",
+    "@types/jest": "^27.0.2",
+    "@types/react-test-renderer": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "babel-plugin-react-require": "^3.1.3",
+    "eslint": "^7.12.1",
+    "eslint-config-standard-jsx": "10.0.0",
+    "eslint-config-standard-with-typescript": "21.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1 || ^5.0.0",
+    "eslint-plugin-react": "^7.21.5",
+    "jest": "^27.0.6",
+    "jest-mock-console": "^1.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-test-renderer": "^17.0.2",
+    "storybook-dark-mode": "^1.0.8",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.3"
+  },
+  "main": "dist/cjs/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "types": "./dist/esm/index.d.ts",
+  "author": {
+    "name": "Rajas Paranjpe",
+    "url": "https://github.com/ChocolateLoverRaj"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "antd": "^4.16.13",
+    "tslib": "^2.3.1"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "files": [
+    "dist"
+  ]
+}
