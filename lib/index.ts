@@ -1,1 +1,1 @@
-export { default } from './ErrorResult'
+export { default, ErrorResultProps } from './ErrorResult'
