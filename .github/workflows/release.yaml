@@ -32,7 +32,9 @@ jobs:
           git config --global user.name "github-actions[bot]"
       - if: steps.get_increment.outputs.increment != 'none'
         name: Semantic Release
-        run: pnpx release-it ${{ steps.get_increment.outputs.increment }} --ci
+        run: >-
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+          pnpx release-it ${{ steps.get_increment.outputs.increment }} --ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
