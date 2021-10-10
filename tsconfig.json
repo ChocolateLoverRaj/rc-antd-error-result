@@ -6,6 +6,7 @@
     "importHelpers": true,
     "declaration": true,
     "moduleResolution": "node",
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "emitDeclarationOnly": true
   }
 }

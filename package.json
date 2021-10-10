@@ -2,8 +2,8 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "lint": "eslint .",
-    "build:cjs": "babel --config-file ./babelConfigCjs.json lib --out-dir dist/cjs --extensions \".tsx,.ts\" --ignore **/*.stories.tsx,**/__tests__",
-    "build:esm": "babel --config-file ./babelConfigEsm.json lib --out-dir dist/esm --extensions \".tsx,.ts\" --ignore **/*.stories.tsx,**/__tests__",
+    "build:cjs": "babel --config-file ./babelConfigCjs.json lib --out-dir dist/cjs --extensions \".tsx,.ts\" --ignore **/*.stories.tsx,**/__tests__ && tsc --project tsconfigCjs.json",
+    "build:esm": "babel --config-file ./babelConfigEsm.json lib --out-dir dist/esm --extensions \".tsx,.ts\" --ignore **/*.stories.tsx,**/__tests__ && tsc --project tsconfigEsm.json",
     "build": "npm run build:cjs && npm run build:esm",
     "test": "jest",
     "build:docs": "build-storybook -o docs",
