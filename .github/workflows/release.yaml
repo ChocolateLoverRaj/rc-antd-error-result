@@ -34,6 +34,7 @@ jobs:
         name: Semantic Release
         run: >-
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+          
           pnpx release-it ${{ steps.get_increment.outputs.increment }} --ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
